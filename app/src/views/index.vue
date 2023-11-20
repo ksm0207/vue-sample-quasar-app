@@ -1,7 +1,7 @@
 <template>
-    <q-layout view="lHh Lpr lFf">
-      <q-header elevated class="glossy">
-        <!-- 메뉴바 -->
+    <div>
+      <q-layout view="hHh lpr fff" >
+        <q-header elevated >
         <q-toolbar>
           <q-btn
             flat
@@ -29,89 +29,102 @@
 
         </q-toolbar>
       </q-header>
-  
-      <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="bg-grey-2">
-        <q-list>
-          <q-item-label header>This is a Drop menu</q-item-label>
-          
-          <!-- Drop Menu Start -->
-          <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-            <q-item-section avatar>
-              <q-icon name="school" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Menu One</q-item-label>
-              <q-item-label caption>Item One</q-item-label>
-            </q-item-section>
-          </q-item>
 
-          <q-item
-            clickable
-            tag="a"
-            target="_blank"
-            href="#"
-          >
-            <q-item-section avatar>
-              <q-icon name="code" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Menu Two</q-item-label>
-              <q-item-label caption>Item Two</q-item-label>
-            </q-item-section>
-          </q-item>
+        <q-drawer v-model="leftDrawerOpen"
+        side="left"
+        show-if-above
+        :width="200"
+        :breakpoint="100"
+        elevated
 
-          <q-item
-            clickable
-            tag="a"
-            target="_blank"
-            href="https://chat.quasar.dev"
-          >
-            <q-item-section avatar>
-              <q-icon name="chat" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Menu Three</q-item-label>
-              <q-item-label caption>Item Three</q-item-label>
-            </q-item-section>
-          </q-item>
+         class="bg-grey-2">
+          <q-list>
+            <q-item-label header>This is a Drop menu</q-item-label>
+            
+            <!-- Drop Menu Start -->
+            <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+              <q-item-section avatar>
+                <q-icon name="school" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Menu One</q-item-label>
+                <q-item-label caption>Item One</q-item-label>
+              </q-item-section>
+            </q-item>
 
-          <q-item
-            clickable
-            tag="a"
-            target="_blank"
-            href="https://forum.quasar.dev"
-          >
-            <q-item-section avatar>
-              <q-icon name="forum" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Menu Four</q-item-label>
-              <q-item-label caption>Item Four</q-item-label>
-            </q-item-section>
-          </q-item>
+            <q-item
+              clickable
+              tag="a"
+              target="_blank"
+              href="#"
+            >
+              <q-item-section avatar>
+                <q-icon name="code" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Menu Two</q-item-label>
+                <q-item-label caption>Item Two</q-item-label>
+              </q-item-section>
+            </q-item>
 
-          <q-item
-            clickable
-            tag="a"
-            target="_blank"
-            href="https://twitter.com/quasarframework"
-          >
-            <q-item-section avatar>
-              <q-icon name="rss_feed" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Menu Five</q-item-label>
-              <q-item-label caption>item Five</q-item-label>
-            </q-item-section>
-          </q-item>
-          <!-- Drop Menu end -->
-        </q-list>
-      </q-drawer>
-  
-      <q-page-container>
-        <HelloWorld />
-      </q-page-container>
+            <q-item
+              clickable
+              tag="a"
+              target="_blank"
+              href="https://chat.quasar.dev"
+            >
+              <q-item-section avatar>
+                <q-icon name="chat" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Menu Three</q-item-label>
+                <q-item-label caption>Item Three</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item
+              clickable
+              tag="a"
+              target="_blank"
+              href="https://forum.quasar.dev"
+            >
+              <q-item-section avatar>
+                <q-icon name="forum" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Menu Four</q-item-label>
+                <q-item-label caption>Item Four</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item
+              clickable
+              tag="a"
+              target="_blank"
+              href="https://twitter.com/quasarframework"
+            >
+              <q-item-section avatar>
+                <q-icon name="rss_feed" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Menu Five</q-item-label>
+                <q-item-label caption>item Five</q-item-label>
+              </q-item-section>
+            </q-item>
+            <!-- Drop Menu end -->
+          </q-list>
+        </q-drawer>
+
+
+
+        <q-page-container>
+          <q-page padding>
+            <HelloWorld />
+          </q-page>
+        </q-page-container>
+     
     </q-layout>
+    </div>
   </template>
   
 <script>
