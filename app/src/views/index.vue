@@ -1,6 +1,7 @@
 <template>
     <q-layout view="lHh Lpr lFf">
       <q-header elevated class="glossy">
+        <!-- 메뉴바 -->
         <q-toolbar>
           <q-btn
             flat
@@ -13,15 +14,27 @@
   
           <q-toolbar-title>Flower App</q-toolbar-title>
   
-          <!-- <div>Quasar v{{ $q.version }}</div> -->
+          <!-- 검색바 -->
+          <q-input dark dense standout v-model="text" input-class="text-right" class="q-ml-md" placeholder="검색하세요."  >
+          <template v-slot:append>
+            <q-icon v-if="text === ''" name="search" />
+            <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
+          </template>
+        </q-input>
+
+        <!-- 상호작용 버튼  -->
+        <q-btn flat icon="question_answer" />
+        <q-btn flat icon="favorite_border" />
+        <q-btn flat icon="perm_identity" />
+
         </q-toolbar>
       </q-header>
   
       <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="bg-grey-2">
-        
         <q-list>
           <q-item-label header>This is a Drop menu</q-item-label>
           
+          <!-- Drop Menu Start -->
           <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
             <q-item-section avatar>
               <q-icon name="school" />
@@ -91,6 +104,7 @@
               <q-item-label caption>item Five</q-item-label>
             </q-item-section>
           </q-item>
+          <!-- Drop Menu end -->
         </q-list>
       </q-drawer>
   
@@ -118,6 +132,7 @@
   
     setup() {
       const leftDrawerOpen = ref(false)
+      const text = ref('')
 
       onMounted(()=>{
         console.log("Git Test")
@@ -126,7 +141,8 @@
       })
 
       return {
-        leftDrawerOpen
+        leftDrawerOpen,
+        text
       };
       
     },
