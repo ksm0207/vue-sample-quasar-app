@@ -120,6 +120,7 @@
       const leftDrawerOpen = ref(false)
 
       onMounted(()=>{
+        console.log("Git Test")
         console.log("Config Mode : " , process.env.VUE_APP_MODE)
         // leftDrawerOpen.value = !leftDrawerOpen.value
       })
