@@ -12,7 +12,7 @@
             icon="menu"
           />
   
-          <q-toolbar-title>Flower App</q-toolbar-title>
+          <q-toolbar-title>App Title</q-toolbar-title>
   
           <!-- 검색바 -->
           <q-input dark dense standout v-model="text" input-class="text-right" class="q-ml-md" placeholder="검색하세요."  >
