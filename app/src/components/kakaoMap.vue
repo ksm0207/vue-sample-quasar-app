@@ -24,6 +24,7 @@ export default {
     });
     // 현재 위치 가져오기
     const userLocationKakaoMap = () => {
+      console.log("Commit test")
       console.log("(1) Location Mounted!")
       loading.value = true;
       if("geolocation" in navigator) {
