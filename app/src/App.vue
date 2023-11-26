@@ -12,6 +12,7 @@
         />
 
         <q-toolbar-title> Quasar App </q-toolbar-title>
+        
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
@@ -39,7 +40,7 @@
             <q-icon name="code" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Github</q-item-label>
+            <q-item-label>Test</q-item-label>
             <q-item-label caption>github.com/quasarframework</q-item-label>
           </q-item-section>
         </q-item>
@@ -107,6 +108,7 @@ export default {
 
   setup() {
     return {
+      
       leftDrawerOpen: ref(false),
     };
   },
