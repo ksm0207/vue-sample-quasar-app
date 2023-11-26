@@ -51,6 +51,29 @@ export default {
                   };
                   console.log("Kakao Map Options : " , options)
                   map = new window.kakao.maps.Map(container, options);
+
+                  const markerPosition = new window.kakao.maps.LatLng(location.value.coords.latitude, location.value.coords.longitude)
+                  const marker = new window.kakao.maps.Marker({
+                    position: markerPosition,
+                    map: map,
+                  });
+                  const infowindow = new window.kakao.maps.InfoWindow({
+                    content: 'Location Information Here', // You can customize this content with your location information
+                  });
+
+                  window.kakao.maps.event.addListener(marker, 'click', () => {
+                    infowindow.open(map, marker);
+                  });
+                  // 사용자의 현재 위치 , 이미지를 제공하여 마커를 사용자 정의를 할 수도 있음
+                  // const markerImage = new window.kakao.maps.MarkerImage(
+                  //   'URL_TO_YOUR_CUSTOM_MARKER_IMAGE',
+                  //   new window.kakao.maps.Size(30, 30),
+                  // );
+                  // const marker = new window.kakao.maps.Marker({
+                  //   position: markerPosition,
+                  //   map: map,
+                  //   image: markerImage, // Use this line if you have a custom marker image
+                  // })
                 });
               };
             }
